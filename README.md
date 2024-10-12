@@ -1,4 +1,4 @@
-# Java Intermidiate
+# Java Intermidiate 1
 
 ## Java.lang 패키지
 - 자바를 이루는 가장 기본이 되는 클래스 패키지
@@ -12,4 +12,9 @@
 - 왜 Object가 최상위 부모일까?
   - 공통 기능 제공 : Object가 최상위 부모라 모든 객체가 공통 기능(클래스 정보, 객체 정보, 같음 등을 비교하는 메소드들)을 제공함 -> 단순화, 일관성
 - 다형성 측면
-  - if(obj instanceof Dog dog) => 현재 obj는 Object타입으로 Dog의 인스턴스를 참조중이다. 따라서 참이므로 obj는 원래 Object형으로 인스턴스를 참조했기 때문에 자식인 Dog 타입으로 인스턴스를 바라볼 수 있도록 다운 캐스팅을 해줘서 dog 변수에 넣어준다 
+  - if(obj instanceof Dog dog) => 현재 obj는 Object타입으로 Dog의 인스턴스를 참조중이다. 따라서 참이므로 obj는 원래 Object형으로 인스턴스를 참조했기 때문에 자식인 Dog 타입으로 인스턴스를 바라볼 수 있도록 다운 캐스팅을 해줘서 dog 변수에 넣어준다
+ 
+## toString()
+- Object 클래스의 메소드
+- 클래스 정보@참조값
+- 
