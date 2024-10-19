@@ -46,4 +46,8 @@
   - compareTo : 사전순으로 얼마나 떨어져 있는가?
   - trim : 단순 띄어쓰기만 제거
   - strip: 띄어쓰기 + 유니코드 공백 제거
-  - 
+
+## StringBuilder
+- 가변 String
+- toString() : StringBuilder -> String으로 바꿀 수 있음
+- 
