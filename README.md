@@ -50,4 +50,9 @@
 ## StringBuilder
 - 가변 String
 - toString() : StringBuilder -> String으로 바꿀 수 있음
+
+## Method chaining
+- 메서드가 **자기 자신의 참조값(this)를 반환**해서 가능함
+- 메서드가 끝나는 시점에 바로 .을 찍어서 변수명을 생략할 수 있다
+- StringBuilder의 대부분의 메서드들이 자기 자신을 반환함 -> 메서드 체이닝 기법 사용 가능
 - 
