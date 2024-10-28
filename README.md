@@ -71,14 +71,20 @@
   - equals로 비교해야 함 : 객체이기 때문에, == 하면 참조값이 같은지를 본다
 - 래퍼 클래스 사용방법
   - new 래퍼클래스 -> deprecated 예정
-  - 값 생성 : 래퍼클래스.valueOf를 사용 권장
+  - 값 생성 : xxx.valueOf()를 사용 권장
     - 하지만 내부에 new 래퍼클래스를 사용
     - valueOf는 미리 Java에서 자주 사용하는 숫자 값 객체를 만들어서 재사용함 -> 캐싱으로 성능 최적화
       - == 비교시, 동일한 값이면 참조값도 같음 
-  - 값 읽기 : 래퍼클래스타입 변수.래퍼클래스의 기본형Value(ex: integerObj.intValue()) -> **기본형을 꺼내준다** 
+  - 값 읽기 : xxxValue() (ex: integerObj.intValue()) -> **기본형을 꺼내준다** 
 - Boxing& Unboxing
   - Boxing(박싱) : 기본형 -> 래퍼 클래스로 변경
-    - 
+    - ex) new Integer, Integer.valueOf() 
   - Unboxing(언박싱) : 래퍼 클래스 내의 기본형 value를 꺼내는 것
-- 오토 박싱(auto boxing) & 오토 언박싱(Auto unboxing)
-  - 컴파일러가 개발자 대신에 valueOf, xxxValue() 코드를 추가해주는 기능 
+    - ex) intValue(), longValue()
+- auto boxing & Auto unboxing
+  - 컴파일러가 개발자 대신에 valueOf, xxxValue() 코드를 추가해주는 기능
+- 그럼 기본형을 왜 계속 사용하는 거지?
+  - 래퍼 클래스는 기본형보다 메모리를 더 많이 소모함(래퍼는 클래스라 안에 메서드, 필드 등등이 존재)
+
+## Class 클래스
+- 클래스의 메타 데이터(클래스의 정보)를 다루는 클래스 
