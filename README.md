@@ -106,4 +106,7 @@
   - values() : 열거형의 모든 상수를 배열로 꺼내줌
   - name() : 상수 이름을 문자열로 
 
-##
+## 시간과 날짜
+- LocalDate, LocalTime, LocalDateTime
+  - Local이 붙는 이유 : 1) 국내에서만 제공되는 서비스를 고려할 떄 2) 생일
+  - 
