@@ -17,7 +17,15 @@ public class StringUtilsMain1 {
         String objString = String.valueOf(obj);
         System.out.println("objString value : "+objString);
 
+        String numString2 = "" + num;
+        System.out.println("blank String + num : "+numString2);
 
+        //toCharArray 메서드
+        char [] strCharArray = str.toCharArray();
+        System.out.println("string to char Array : "+strCharArray);
+        for (char c : strCharArray) {
+            System.out.print(c);
+        }
 
 
     }
