@@ -19,6 +19,7 @@
 - 형태 : 인스턴스를 만들어낸 클래스 정보 @ 객체의 참조값
 - 오버라이딩 가능
 - System.out.println 내부에 Object를 파라미터 값으로 설정해 다형적 참조 + 내부에서 toString()을 사용함
+  - 객체 이름만으로 println을 하면, toString()이 호출된다 
 
 ## equals()
 - 동등성? 동일성?
@@ -46,4 +47,66 @@
   - compareTo : 사전순으로 얼마나 떨어져 있는가?
   - trim : 단순 띄어쓰기만 제거
   - strip: 띄어쓰기 + 유니코드 공백 제거
+
+## StringBuilder
+- 가변 String
+- toString() : StringBuilder -> String으로 바꿀 수 있음
+
+## Method chaining
+- 메서드가 **자기 자신의 참조값(this)를 반환**해서 가능함
+- 메서드가 끝나는 시점에 바로 .을 찍어서 변수명을 생략할 수 있다
+- StringBuilder의 대부분의 메서드들이 자기 자신을 반환함 -> 메서드 체이닝 기법 사용 가능
+
+
+## Wrapper 클래스
+- 정의 : 특정 기본형을 감싸서 만든 클래스 -> 기본형의 객체 버전 
+- 기본형의 한계
+  - 객체의 장점을 살릴 수 없음 : 유용한 메서드 제공 불가 
+  - **null을 넣을 수 없음** : 데이터가 '없음' 상태 제공 불가
+    - null : 참조하는 값이 없을 때
+- 자바는 기본형에 대응하는 래퍼 클래스를 제공함
+  - int -> Integer, long -> Long 등...
+- 래퍼 클래스의 특징
+  - 불변
+  - equals로 비교해야 함 : 객체이기 때문에, == 하면 참조값이 같은지를 본다
+- 래퍼 클래스 사용방법
+  - new 래퍼클래스 -> deprecated 예정
+  - 값 생성 : xxx.valueOf()를 사용 권장
+    - 하지만 내부에 new 래퍼클래스를 사용
+    - valueOf는 미리 Java에서 자주 사용하는 숫자 값 객체를 만들어서 재사용함 -> 캐싱으로 성능 최적화
+      - == 비교시, 동일한 값이면 참조값도 같음 
+  - 값 읽기 : xxxValue() (ex: integerObj.intValue()) -> **기본형을 꺼내준다** 
+- Boxing& Unboxing
+  - Boxing(박싱) : 기본형 -> 래퍼 클래스로 변경
+    - ex) new Integer, Integer.valueOf() 
+  - Unboxing(언박싱) : 래퍼 클래스 내의 기본형 value를 꺼내는 것
+    - ex) intValue(), longValue()
+- auto boxing & Auto unboxing
+  - 컴파일러가 개발자 대신에 valueOf, xxxValue() 코드를 추가해주는 기능
+- 그럼 기본형을 왜 계속 사용하는 거지?
+  - 래퍼 클래스는 기본형보다 메모리를 더 많이 소모함(래퍼는 클래스라 안에 메서드, 필드 등등이 존재)
+
+## Class 클래스
+- 클래스의 메타 데이터(클래스의 정보)를 다루는 클래스 
+
+## enum(enumeration)
+- 사용이유
+  - String을 사용하면 타입 안정성 부족 문제 -> 컴파일로 오류 감지 불가
+  - final String(문자열 상수) : 그래도 메소드의 파라미터에 String으로 받을 수 있게 해놓았으므로 소용 없음
+- 정의 : 타입 안전 열거형. 일련의 명명된 상수들의 집합 
+- 특징
+  - 외부에서 enum 클래스의 인스턴스 생성 불가능
+  - 상수들로만 구성 -> 오타 오류 불가능 -> 타입 안정성 향상
+    - **나열된 상수들만이 enum 타입의 인스턴스들의 참조값을 갖고 있음**
+    - 그리고 그 상수들은 static final 타입들이다  
+  - 새로운 상수 추가 간편
+  - static final 이라서 import static 가능
+  - enum도 당연히 클래스 -> 메소드, 생성자, 변수 선언등 다 가능함
+- 주요 메서드
+  - values() : 열거형의 모든 상수를 배열로 꺼내줌
+  - name() : 상수 이름을 문자열로 
+
+## 시간과 날짜
+- LocalDate, LocalTime, LocalDateTime
+  - Local이 붙는 이유 : 1) 국내에서만 제공되는 서비스를 고려할 떄 2) 생일
   - 
