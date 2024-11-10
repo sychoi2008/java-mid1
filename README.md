@@ -107,6 +107,12 @@
   - name() : 상수 이름을 문자열로 
 
 ## 시간과 날짜
-- LocalDate, LocalTime, LocalDateTime
+- 모든 날짜 클래스는 불변이다(String, Wrapper 등) -> 새로운 객체를 반환하므로 반환값을 받아야 함 
+- LocalDateTime
   - Local이 붙는 이유 : 1) 국내에서만 제공되는 서비스를 고려할 떄 2) 생일
-  - 
+  - now() : 현재 날짜, 시간 등을 출력 / of() : 날짜, 시간 등을 지정함 / plusXXXX : 날짜 더하기
+  - isEqual() : 타임존이 달라도 시간적으로 같으면 true <-> equals() : 타임존 등 모든 구성요소가 같아야 함
+- ZonedDateTime
+  - 일광 절약 시간제(ZoneId) + UTC로부터 차이
+- OffsetDateTime
+  - UTC차이만 존재 
